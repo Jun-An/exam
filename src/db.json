@@ -1,0 +1,6 @@
+{
+  "sidebars": [
+    { "name": "Home", "isFocus": true },
+    { "name": "Tags", "isFocus": false }
+  ]
+}

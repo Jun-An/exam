@@ -1,0 +1,6 @@
+{
+  "sidebars": [
+    { "name": "Home", "icon": "home" },
+    { "name": "", "icon": "home" }
+  ]
+}

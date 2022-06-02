@@ -1,0 +1,31 @@
+:host {
+  background: #1b1b1b;
+}
+.logo {
+  background: linear-gradient(270deg, #ffd25f 0.13%, #ff5c01 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+// background: rgba(138, 138, 143, 1);
+
+.point {
+  width: 7px;
+  height: 7px;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 63.25%;
+  right: 20%;
+  top: 1.22%;
+  bottom: 82%;
+
+  /* Primary/Light */
+
+  background: #00d1ff;
+  /* Greyscale/BG - light */
+
+  border: 1px solid #1b1b1b;
+  transform: rotate(90deg);
+}
