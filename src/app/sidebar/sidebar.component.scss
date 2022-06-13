@@ -1,13 +1,28 @@
 :host {
   background: #1b1b1b;
 }
+
+.deskTop {
+  display: flex;
+  flex: 0 0 80px;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.handSet {
+  display: flex;
+  height: 66px;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
   background: linear-gradient(270deg, #ffd25f 0.13%, #ff5c01 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  width: 36px;
 }
-// background: rgba(138, 138, 143, 1);
 
 .point {
   width: 7px;

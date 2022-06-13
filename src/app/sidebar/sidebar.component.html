@@ -1,22 +1,38 @@
-<div
-  class="logo font-[Ubuntu] not-italic font-bold text-[13px] leading-[15px] tracking-tighter ml-5 mb-[46.5px] mt-[37px]"
->
-  LOGO
+<div class="handSet" *ngIf="isHandSet$ | async; else deskTop">
+  <div class="relative" *ngFor="let sideBar of sideBars">
+    <button class="ml-6 mr-[22px]" mat-button>
+      <mat-icon [svgIcon]="sideBar.isFocus ? 'home' : 'home-gray'">{{
+        sideBar.name
+      }}</mat-icon>
+    </button>
+
+    <div class="point"></div>
+  </div>
 </div>
 
-<div
-  class="flex flex-col mb-[25.5px] relative"
-  *ngFor="let sideBar of sideBars; trackBy: trackByFunc"
->
-  <button class="ml-6 mr-[22px]" mat-button (click)="clickSideBar(sideBar)">
-    <mat-icon [svgIcon]="sideBar.isFocus ? 'home' : 'home-gray'">{{
-      sideBar.name
-    }}</mat-icon>
-  </button>
-  <span
-    class="text-white font-[Ubuntu] not-italic font-normal text-[12px] leading-[150%] tracking-[0.4px] ml-6 mr-[22px]"
-    *ngIf="sideBar.isFocus"
-    >{{ sideBar.name }}</span
-  >
-  <div class="point"></div>
-</div>
+<ng-template #deskTop>
+  <div class="deskTop">
+    <div
+      class="logo font-[Ubuntu] not-italic font-bold text-[13px] leading-[15px] tracking-tighter ml-5 mb-[46.5px] mt-[37px]"
+    >
+      LOGO
+    </div>
+
+    <div
+      class="flex flex-col mb-[25.5px] relative"
+      *ngFor="let sideBar of sideBars"
+    >
+      <button class="ml-6 mr-[22px]" mat-button>
+        <mat-icon [svgIcon]="sideBar.isFocus ? 'home' : 'home-gray'">{{
+          sideBar.name
+        }}</mat-icon>
+      </button>
+      <span
+        class="text-white font-[Ubuntu] not-italic font-normal text-[12px] leading-[150%] tracking-[0.4px] ml-6 mr-[22px]"
+        *ngIf="sideBar.isFocus"
+        >{{ sideBar.name }}</span
+      >
+      <div class="point"></div>
+    </div>
+  </div>
+</ng-template>

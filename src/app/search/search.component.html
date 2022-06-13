@@ -1,0 +1,47 @@
+<div class="flex flex-col container" [class.mobile]="isHandSet$ | async">
+  <div
+    class="logo font-[Ubuntu] not-italic font-bold text-[13px] leading-[15px] tracking-tighter"
+    *ngIf="isHandSet$ | async"
+  >
+    LOGO
+  </div>
+
+  <div class="search-container">
+    <div class="flex">
+      <!-- <button mat-button>
+        <mat-icon svgIcon="vector"></mat-icon>
+      </button> -->
+      <span class="text-white font-[Ubuntu] font-normal text-[24px] leading-9"
+        >Search</span
+      >
+    </div>
+
+    <input class="search mb-[30px]" type="text" placeholder="Keyword" />
+  </div>
+
+  <div class="flex flex-col mt-[30px] result-container">
+    <span class="text-white font-[Ubuntu] font-normal text-[24px] leading-9"
+      ># of results per page</span
+    >
+
+    <div class="text-white">
+      <span class="font-[Ubuntu] font-bold text-5xl leading-[72px] mr-2.5"
+        >30</span
+      ><span
+        class="font-[Ubuntu] font-normal text-[16px] leading-6 tracking-[ 0.5px]"
+        >results</span
+      >
+    </div>
+
+    <input type="range" min="0" max="5" step="1" style="margin-bottom: 50px" />
+  </div>
+
+  <div class="search-btn w-full" [class.mobile]="isHandSet$ | async">
+    <button
+      class="bg-white w-full font-[Ubuntu] not-italic font-bold"
+      mat-button
+    >
+      SEARCH
+    </button>
+  </div>
+</div>

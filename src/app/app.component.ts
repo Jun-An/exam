@@ -1,15 +1,26 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { map } from "rxjs";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+  isHandSet$ = this.breakpointObserver
+    .observe(Breakpoints.XSmall)
+    .pipe(map(({ matches }) => matches));
+
+  hideProfile$ = this.breakpointObserver
+    .observe("(min-width: 1440px)")
+    .pipe(map(({ matches }) => matches));
   constructor(
     private readonly matIconRegistry: MatIconRegistry,
-    private readonly sanitizer: DomSanitizer
+    private readonly sanitizer: DomSanitizer,
+    private readonly breakpointObserver: BreakpointObserver
   ) {
     this.registerCustomIcon();
   }

@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<div class="flex flex-row" [class.flex-col-reverse]="isHandSet$ | async">
+  <app-sidebar></app-sidebar>
+  <router-outlet></router-outlet>
+  <app-profile *ngIf="hideProfile$ | async"></app-profile>
+</div>

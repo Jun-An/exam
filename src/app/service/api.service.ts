@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { SideBar } from "../interface/sidebar";
+import { Profile } from "../interface/profile";
 @Injectable({
   providedIn: "root",
 })
@@ -16,5 +17,9 @@ export class ApiService {
   fetchNews() {
     const url = "https://www.hpa.gov.tw/wf/newsapi.ashx";
     return this.httpClient.get(url);
+  }
+
+  fetchProfile(): Observable<Profile> {
+    return this.httpClient.get<Profile>(`${this.baseUrl}/profile`);
   }
 }
